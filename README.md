@@ -1,3 +1,13 @@
+## 📽️ Apresentação
+
+A apresentação do projeto está disponível no link abaixo:
+
+🔗 [Acessar apresentação no Canva](https://www.canva.com/design/DAGt7ysXQLk/kucw9ga9LJ0WPT8bYJbP0g/view?utm_content=DAGt7ysXQLk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h5839ff36c6O)
+Se quiser que o link abra em uma nova aba (em ambientes que suportam HTML), pode usar:
+html
+
+<a href="https://www.canva.com/design/DAGt7ysXQLk/kucw9ga9LJ0WPT8bYJbP0g/view?utm_content=DAGt7ysXQLk&utm_campaign
+
 # 📌 Visão Geral
 
 Este projeto realiza testes automatizados no site **DemoQA** utilizando o framework **Cypress**. Foram implementados cenários de teste para três módulos principais: **Book Store**, **Formulários** e **Login**.
