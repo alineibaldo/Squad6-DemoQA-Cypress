@@ -1,28 +1,32 @@
-📌 Visão Geral
+# 📌 Visão Geral
 
-Este projeto realiza testes automatizados no site DemoQA utilizando o framework Cypress. Foram implementados cenários de teste para três módulos principais: Book Store, Formulários e Login.
+Este projeto realiza testes automatizados no site **DemoQA** utilizando o framework **Cypress**. Foram implementados cenários de teste para três módulos principais: **Book Store**, **Formulários** e **Login**.
 
+[![Cypress](https://img.shields.io/badge/cypress-12.17.0-brightgreen)](https://www.cypress.io/)
+[![Node.js](https://img.shields.io/badge/node-18.x-blue)](https://nodejs.org/)
 
-🚀 Pré-requisitos
+---
+
+## 🚀 Pré-requisitos
+
 Antes de rodar os testes, certifique-se de ter os seguintes pré-requisitos instalados:
 
-Node.js (versão 16 ou superior)
+- **Node.js** (versão 16 ou superior)
+- **npm** (versão 8 ou superior)
+- **Git** (para controle de versão)
 
-npm (versão 8 ou superior)
+---
 
-Git (para controle de versão)
+## ⚙️ Configuração do Ambiente
 
-⚙️ Configuração do Ambiente
-1. Clone o Repositório
-bash
+### 1. Clone o Repositório
 
+```bash
 git clone https://github.com/seu-usuario/Squad6-DemoQA-Cypress-automacao-3-cenarios.git
-
 2. Instale as Dependências
 bash
 
 npm install
-
 3. Instale o Cypress (se necessário)
 bash
 
@@ -49,7 +53,6 @@ Um teste específico:
 bash
 
 npx cypress run --spec "cypress/e2e/formulario/formulario-CT001.cy.js"
-
 📋 Suites de Teste Implementadas
 1. Book Store
 Localização: cypress/e2e/bookstore/
@@ -63,7 +66,6 @@ CT002: Pesquisa por livro inexistente
 CT003: Navegação para página de detalhes do livro
 
 Dados de Teste:
-
 javascript
 
 // Exemplo de livro usado nos testes
@@ -87,7 +89,6 @@ CT004: Validação de e-mail inválido
 CT005: Validação de todos os campos vazios
 
 3. Login
-   
 Localização: cypress/e2e/login/
 
 Cenários Testados:
@@ -99,61 +100,59 @@ CT002: Login com username inválido
 CT003: Login com password inválido
 
 Dados de Teste:
-
 javascript
+
 
 const validUser = {
   username: 'josesilva',
   password: '1234@Teste'
-
 }
-
 🛠️ Estrutura do Projeto
+bash
 
 
 cypress/
-├── e2e/
-│   ├── bookstore/            # Testes da livraria
+├── e2e/                          # Testes automatizados
+│   ├── bookstore/                # Testes da livraria
 │   │   ├── bookstore-CT001.cy.js
 │   │   ├── bookstore-CT002.cy.js
 │   │   └── bookstore-CT003.cy.js
-│   ├── formulario/           # Testes de formulários
+│   ├── formulario/               # Testes de formulários
 │   │   ├── formulario-CT001.cy.js
 │   │   ├── ... (outros CTs)
-│   └── login/                # Testes de login
+│   └── login/                    # Testes de login
 │       ├── login-CT001.cy.js
 │       ├── ... (outros CTs)
-├── fixtures/                 # Dados de teste
+├── fixtures/                     # Dados de teste
 │   └── example.json
-└── support/                  # Configurações e comandos
-    ├── commands.js
-    └── e2e.js
-
+└── support/                      # Configurações e comandos do Cypress
+    ├── commands.js               # Comandos personalizados
+    └── e2e.js                    # Configurações globais
 
 🔧 Configurações Especiais
-Tratamento de Erros Cross-Origin
+1. Tratamento de Erros Cross-Origin
 Adicionado em cada arquivo de teste para tratar erros de scripts externos:
-
 javascript
 
 Cypress.on('uncaught:exception', (err, runnable) => {
   if (err.message.includes('Script error')) {
-    return false  // Ignora erro de scripts externos
+    return false; // Ignora erro de scripts externos
   }
-  return true
-})
-Configuração Global
-No arquivo cypress.config.js:
+  return true;
+});
 
+2. Configuração Global
+No arquivo cypress.config.js:
 javascript
 
 module.exports = {
   e2e: {
-    baseUrl: 'https://demoqa.com',
-    defaultCommandTimeout: 10000,  // Tempo de espera padrão
+    baseUrl: 'https://demoqa.com',          // URL base para os testes
+    defaultCommandTimeout: 10000,           // Tempo de espera padrão para comandos
     setupNodeEvents(on, config) {
       // Adicione event listeners, se necessário
     },
   },
-}
+};
+
 
