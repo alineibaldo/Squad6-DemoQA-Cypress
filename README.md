@@ -1,111 +1,120 @@
 📌 Visão Geral
-
 Este projeto realiza testes automatizados no site DemoQA utilizando o framework Cypress. Foram implementados cenários de teste para três módulos principais: Book Store, Formulários e Login.
 
-https://img.shields.io/badge/cypress-12.17.0-brightgreen
-https://img.shields.io/badge/node-18.x-blue
+
+
 🚀 Pré-requisitos
+Antes de rodar os testes, certifique-se de ter os seguintes pré-requisitos instalados:
 
-    Node.js 16+
+Node.js (versão 16 ou superior)
 
-    npm 8+
+npm (versão 8 ou superior)
 
-    Git (para controle de versão)
+Git (para controle de versão)
 
 ⚙️ Configuração do Ambiente
+1. Clone o Repositório
 bash
-
-# Clone o repositório
+Copiar
+Editar
 git clone https://github.com/seu-usuario/Squad6-DemoQA-Cypress-automacao-3-cenarios.git
-
-# Instale as dependências
+2. Instale as Dependências
+bash
+Copiar
+Editar
 npm install
-
-# Instale o Cypress (se necessário)
+3. Instale o Cypress (se necessário)
+bash
+Copiar
+Editar
 npx cypress install
-
 🧪 Executando os Testes
+Existem dois modos principais para rodar os testes:
 
-Modo interativo:
+Modo Interativo:
 bash
-
+Copiar
+Editar
 npx cypress open
-
-Modo headless:
+Modo Headless:
 bash
-
+Copiar
+Editar
 npx cypress run
+Executar Testes Específicos:
+Todos os testes de Login:
 
-Executar testes específicos:
 bash
-
-# Todos os testes de login
+Copiar
+Editar
 npx cypress run --spec "cypress/e2e/login/*.cy.js"
+Um teste específico:
 
-# Um teste específico
+bash
+Copiar
+Editar
 npx cypress run --spec "cypress/e2e/formulario/formulario-CT001.cy.js"
-
 📋 Suites de Teste Implementadas
 1. Book Store
-
 Localização: cypress/e2e/bookstore/
 
-Cenários testados:
+Cenários Testados:
 
-    CT001: Pesquisa por livro existente
+CT001: Pesquisa por livro existente
 
-    CT002: Pesquisa por livro inexistente
+CT002: Pesquisa por livro inexistente
 
-    CT003: Navegação para página de detalhes do livro
+CT003: Navegação para página de detalhes do livro
 
-Dados de teste:
+Dados de Teste:
+
 javascript
-
+Copiar
+Editar
 // Exemplo de livro usado nos testes
 const testBook = {
   title: 'Git Pocket Guide',
   author: 'Richard E. Silverman'
 }
-
 2. Formulários
-
 Localização: cypress/e2e/formulario/
 
-Cenários testados:
+Cenários Testados:
 
-    CT001: Preenchimento válido do Text Box
+CT001: Preenchimento válido do Text Box
 
-    CT002: Validação de campo FullName vazio
+CT002: Validação de campo FullName vazio
 
-    CT003: Validação de FullName com apenas um nome
+CT003: Validação de FullName com apenas um nome
 
-    CT004: Validação de e-mail inválido
+CT004: Validação de e-mail inválido
 
-    CT005: Validação de todos os campos vazios
+CT005: Validação de todos os campos vazios
 
 3. Login
-
 Localização: cypress/e2e/login/
 
-Cenários testados:
+Cenários Testados:
 
-    CT001: Login com credenciais válidas
+CT001: Login com credenciais válidas
 
-    CT002: Login com username inválido
+CT002: Login com username inválido
 
-    CT003: Login com password inválido
+CT003: Login com password inválido
 
-Dados de teste:
+Dados de Teste:
+
 javascript
-
+Copiar
+Editar
 const validUser = {
   username: 'josesilva',
   password: '1234@Teste'
 }
-
 🛠️ Estrutura do Projeto
-text
-
+plaintext
+Copiar
+Editar
 cypress/
 ├── e2e/
 │   ├── bookstore/            # Testes da livraria
@@ -123,31 +132,31 @@ cypress/
 └── support/                  # Configurações e comandos
     ├── commands.js
     └── e2e.js
-
 🔧 Configurações Especiais
 Tratamento de Erros Cross-Origin
+Adicionado em cada arquivo de teste para tratar erros de scripts externos:
 
-Adicionado em cada arquivo de teste:
 javascript
-
+Copiar
+Editar
 Cypress.on('uncaught:exception', (err, runnable) => {
   if (err.message.includes('Script error')) {
-    return false
+    return false  // Ignora erro de scripts externos
   }
   return true
 })
-
 Configuração Global
+No arquivo cypress.config.js:
 
-No cypress.config.js:
 javascript
-
+Copiar
+Editar
 module.exports = {
   e2e: {
     baseUrl: 'https://demoqa.com',
-    defaultCommandTimeout: 10000,
+    defaultCommandTimeout: 10000,  // Tempo de espera padrão
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      // Adicione event listeners, se necessário
     },
   },
 }
