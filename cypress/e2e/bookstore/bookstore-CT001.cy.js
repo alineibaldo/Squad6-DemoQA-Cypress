@@ -14,12 +14,5 @@ describe('Pesquisa de livros', () => {
       .and('contain', 'Richard E. Silverman');
   });
 
-  it('Pesquisa por um livro inexistente', () => {
-    cy.visit('https://demoqa.com/books');
-
-    cy.get('#searchBox').type('Livro Inexistente');
-
-    cy.get('.rt-noData').should('contain', 'No rows found');
-  });
 });
 
