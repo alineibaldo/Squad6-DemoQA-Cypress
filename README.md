@@ -1,6 +1,6 @@
 📌 Visão Geral
-Este projeto realiza testes automatizados no site DemoQA utilizando o framework Cypress. Foram implementados cenários de teste para três módulos principais: Book Store, Formulários e Login.
 
+Este projeto realiza testes automatizados no site DemoQA utilizando o framework Cypress. Foram implementados cenários de teste para três módulos principais: Book Store, Formulários e Login.
 
 
 🚀 Pré-requisitos
@@ -15,45 +15,41 @@ Git (para controle de versão)
 ⚙️ Configuração do Ambiente
 1. Clone o Repositório
 bash
-Copiar
-Editar
+
 git clone https://github.com/seu-usuario/Squad6-DemoQA-Cypress-automacao-3-cenarios.git
+
 2. Instale as Dependências
 bash
-Copiar
-Editar
+
 npm install
+
 3. Instale o Cypress (se necessário)
 bash
-Copiar
-Editar
+
 npx cypress install
 🧪 Executando os Testes
 Existem dois modos principais para rodar os testes:
 
 Modo Interativo:
 bash
-Copiar
-Editar
+
 npx cypress open
 Modo Headless:
 bash
-Copiar
-Editar
+
 npx cypress run
 Executar Testes Específicos:
 Todos os testes de Login:
 
 bash
-Copiar
-Editar
+
 npx cypress run --spec "cypress/e2e/login/*.cy.js"
 Um teste específico:
 
 bash
-Copiar
-Editar
+
 npx cypress run --spec "cypress/e2e/formulario/formulario-CT001.cy.js"
+
 📋 Suites de Teste Implementadas
 1. Book Store
 Localização: cypress/e2e/bookstore/
@@ -69,8 +65,7 @@ CT003: Navegação para página de detalhes do livro
 Dados de Teste:
 
 javascript
-Copiar
-Editar
+
 // Exemplo de livro usado nos testes
 const testBook = {
   title: 'Git Pocket Guide',
@@ -92,6 +87,7 @@ CT004: Validação de e-mail inválido
 CT005: Validação de todos os campos vazios
 
 3. Login
+   
 Localização: cypress/e2e/login/
 
 Cenários Testados:
@@ -105,16 +101,16 @@ CT003: Login com password inválido
 Dados de Teste:
 
 javascript
-Copiar
-Editar
+
 const validUser = {
   username: 'josesilva',
   password: '1234@Teste'
+
 }
+
 🛠️ Estrutura do Projeto
-plaintext
-Copiar
-Editar
+
+
 cypress/
 ├── e2e/
 │   ├── bookstore/            # Testes da livraria
@@ -132,13 +128,14 @@ cypress/
 └── support/                  # Configurações e comandos
     ├── commands.js
     └── e2e.js
+
+
 🔧 Configurações Especiais
 Tratamento de Erros Cross-Origin
 Adicionado em cada arquivo de teste para tratar erros de scripts externos:
 
 javascript
-Copiar
-Editar
+
 Cypress.on('uncaught:exception', (err, runnable) => {
   if (err.message.includes('Script error')) {
     return false  // Ignora erro de scripts externos
@@ -149,8 +146,7 @@ Configuração Global
 No arquivo cypress.config.js:
 
 javascript
-Copiar
-Editar
+
 module.exports = {
   e2e: {
     baseUrl: 'https://demoqa.com',
@@ -160,3 +156,4 @@ module.exports = {
     },
   },
 }
+
