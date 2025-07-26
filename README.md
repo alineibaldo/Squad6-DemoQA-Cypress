@@ -8,14 +8,14 @@ html
 
 <a href="https://www.canva.com/design/DAGt7ysXQLk/kucw9ga9LJ0WPT8bYJbP0g/view?utm_content=DAGt7ysXQLk&utm_campaign
 
-## Autores
+## 👥 AutoresAutores
 
 - Aline Ibaldo Gonçalves  
 - Erick Rodrigues de Oliveira 
 - Fábio Vinícius 
 - Katleen Lima Barros
 
-# 📌 Visão Geral
+## 📌 Visão Geral
 
 Este projeto realiza testes automatizados no site **DemoQA** utilizando o framework **Cypress**. Foram implementados cenários de teste para três módulos principais: **Book Store**, **Formulários** e **Login**.
 
