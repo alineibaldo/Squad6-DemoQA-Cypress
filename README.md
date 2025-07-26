@@ -8,7 +8,7 @@ html
 
 <a href="https://www.canva.com/design/DAGt7ysXQLk/kucw9ga9LJ0WPT8bYJbP0g/view?utm_content=DAGt7ysXQLk&utm_campaign
 
-## 👥 AutoresAutores
+## 👥 Autores
 
 - Aline Ibaldo Gonçalves  
 - Erick Rodrigues de Oliveira 
